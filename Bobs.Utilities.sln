@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bobs.Utilities", "source\Bobs.Utilities\Bobs.Utilities.csproj", "{EEAE245F-8AD1-4735-A2F3-12D81A702C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bobs.Utilities.Tests", "tests\Bobs.Utilities.Tests\Bobs.Utilities.Tests.csproj", "{601719D6-5846-4207-A656-B1DA9902AA40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEAE245F-8AD1-4735-A2F3-12D81A702C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAE245F-8AD1-4735-A2F3-12D81A702C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAE245F-8AD1-4735-A2F3-12D81A702C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAE245F-8AD1-4735-A2F3-12D81A702C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601719D6-5846-4207-A656-B1DA9902AA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601719D6-5846-4207-A656-B1DA9902AA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601719D6-5846-4207-A656-B1DA9902AA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601719D6-5846-4207-A656-B1DA9902AA40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
