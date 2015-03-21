@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Check_ArgumentEmpty_Tests.cs" />
     <Compile Include="Check_ArgumentNull_Tests.cs" />
+    <Compile Include="Check_ArgumentOutOfRange_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
