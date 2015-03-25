@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13D00F16-E0E4-4134-A02B-D8CDAD5E08F5}"
 	ProjectSection(SolutionItems) = preProject
 		source\Bobs.Utilities\Bobs.Utilities.nuspec = source\Bobs.Utilities\Bobs.Utilities.nuspec
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
