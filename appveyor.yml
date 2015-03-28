@@ -33,7 +33,7 @@ before_build:
 - .\nuget\nuget.exe restore
 
 after_build:
-- .\nuget\nuget.exe pack "source\Bobs.Lumberjack\Bobs.Lumberjack.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
+- .\nuget\nuget.exe pack "source\Bobs.Utilities\Bobs.Utilities.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
 
 artifacts:
 - path: Bobs.Lumberjack.*.nupkg
