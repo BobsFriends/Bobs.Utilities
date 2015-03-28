@@ -1,4 +1,4 @@
-version: {build}
+version: '{build}'
 
 environment:
   version: 0.1.0
