@@ -1,15 +1,42 @@
-version: 1.0.{build}
-configuration: Release
-platform: Any CPU
+version: {build}
+
+environment:
+  version: 0.1.0
+  suffix: -dev001
+
+install:
+- ps: |
+    Write-Host "Commit being built = $($Env:APPVEYOR_REPO_COMMIT)"
+    Write-Host "Current build version = $($Env:VERSION)"
+    Write-Host "Target branch = $($Env:APPVEYOR_REPO_BRANCH)"
+    If ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null)
+    {
+      Write-Host "Pull Request = $($Env:APPVEYOR_PULL_REQUEST_NUMBER)"
+    }
+    $Env:FILE_VERSION = "$($Env:VERSION).$($Env:APPVEYOR_BUILD_NUMBER)"
+    $Env:FULL_VERSION = "$($Env:VERSION)$($Env:SUFFIX)"
+    Write-Host "File Version = $($Env:FILE_VERSION)"
+    Write-Host "Full Version = $($Env:FULL_VERSION)"
+
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
-  assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
+  assembly_version: '$(VERSION)'
+  assembly_file_version: '$(VERSION)'
+  assembly_informational_version: '$(FULL_VERSION)'
+
+configuration: Release
+
+platform: Any CPU
+
 before_build:
-- ps: nuget restore
+- .\nuget\nuget.exe restore
+
+after_build:
+- .\nuget\nuget.exe pack "source\Bobs.Lumberjack\Bobs.Lumberjack.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
+
+artifacts:
+- path: Bobs.Lumberjack.*.nupkg
+
 build:
-  publish_nuget: true
-  publish_nuget_symbols: true
   verbosity: minimal
