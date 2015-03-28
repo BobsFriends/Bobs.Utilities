@@ -33,10 +33,10 @@ before_build:
 - .\nuget\nuget.exe restore
 
 after_build:
-- .\nuget\nuget.exe pack "source\Bobs.Utilities\Bobs.Utilities.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
+- .\nuget\nuget.exe pack "source\$(APPVEYOR_PROJECT_NAME)\$(APPVEYOR_PROJECT_NAME).csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
 
 artifacts:
-- path: Bobs.Lumberjack.*.nupkg
+- path: $(APPVEYOR_PROJECT_NAME)*.nupkg
 
 build:
   verbosity: minimal
