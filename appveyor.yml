@@ -32,9 +32,10 @@ configuration: Release
 platform: Any CPU
 
 before_build:
-- .\nuget\nuget.exe restore
+- .\nuget\nuget.exe restore "%APPVEYOR_PROJECT_NAME%.sln"
 
 build:
+  verbosity: minimal
   project: '$(APPVEYOR_PROJECT_NAME).sln'
 
 after_build:
@@ -51,6 +52,3 @@ artifacts:
   name: NuGet Package
 - path: 'coverage.xml'
   name: Coverage Data
-
-build:
-  verbosity: minimal
