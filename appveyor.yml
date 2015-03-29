@@ -34,6 +34,9 @@ platform: Any CPU
 before_build:
 - .\nuget\nuget.exe restore
 
+build:
+  project: '$(APPVEYOR_PROJECT_NAME).sln'
+
 after_build:
 - .\nuget\nuget.exe pack "source\%APPVEYOR_PROJECT_NAME%\%APPVEYOR_PROJECT_NAME%.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
 
