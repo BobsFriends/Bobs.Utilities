@@ -4,7 +4,7 @@ environment:
   version: 0.1.0
   suffix: -dev001
   COVERALLS_REPO_TOKEN:
-    secure: KzTaRAfwaHgRAc7rfLWCYjHQocbDbCOm/bbwxMCxJMgSahcCzTjPfzTs+aHOnzsv
+    secure: LVrKBbaXUi7oRuVGiDhPSpKCFA35lB9zLX15tFjEllNKPOXKBbsxNqQ26uAQzGc9
 
 install:
 - ps: |
