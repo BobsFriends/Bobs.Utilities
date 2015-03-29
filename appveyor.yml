@@ -3,6 +3,8 @@ version: '{build}'
 environment:
   version: 0.1.0
   suffix: -dev001
+  COVERALLS_REPO_TOKEN:
+    secure: KzTaRAfwaHgRAc7rfLWCYjHQocbDbCOm/bbwxMCxJMgSahcCzTjPfzTs+aHOnzsv
 
 install:
 - ps: |
@@ -35,8 +37,17 @@ before_build:
 after_build:
 - .\nuget\nuget.exe pack "source\%APPVEYOR_PROJECT_NAME%\%APPVEYOR_PROJECT_NAME%.csproj" -Properties "Configuration=Release;Platform=AnyCPU" -Symbols -IncludeReferencedProjects
 
+test_script:
+- packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"nunit-console.exe" -targetargs:"/noshadow /domain:single tests\$(APPVEYOR_PROJECT_NAME).Tests\bin\Release\$(APPVEYOR_PROJECT_NAME).Tests.dll" -output:coverage.xml
+
+after_test: 
+- packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
+
 artifacts:
 - path: '$(APPVEYOR_PROJECT_NAME)*.nupkg'
+  name: NuGet Package
+- path: 'coverage.xml'
+  name: Coverage Data
 
 build:
   verbosity: minimal
