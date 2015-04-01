@@ -49,7 +49,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Enum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringFormatter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Bobs.Utilities.nuspec" />

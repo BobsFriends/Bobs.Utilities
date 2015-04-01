@@ -65,7 +65,10 @@
     <Compile Include="Check_ArgumentEmpty_Tests.cs" />
     <Compile Include="Check_ArgumentNull_Tests.cs" />
     <Compile Include="Check_ArgumentOutOfRange_Tests.cs" />
+    <Compile Include="Generic_Enum_Tests.cs" />
+    <Compile Include="TestEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringFormatter_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\source\Bobs.Utilities\Bobs.Utilities.csproj">
