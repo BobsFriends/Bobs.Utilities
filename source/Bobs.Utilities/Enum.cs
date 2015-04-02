@@ -16,7 +16,8 @@ namespace Bobs
         /// <summary>
         /// Verifies the <typeparamref name="TEnum"/>.
         /// </summary>
-        /// <exception cref="System.ArgumentException"><typeparamref name="TEnum"/> is not an <see cref="System.Enum"/>.</exception>
+        /// <exception cref="System.ArgumentException"><typeparamref name="TEnum"/> is not an <see cref="System.Enum"/>.
+        /// The <see cref="System.ArgumentException"/> will be wrapped in a <see cref="System.TypeInitializationException"/>.</exception>
         static Enum()
         {
             _enumType = typeof(TEnum);

@@ -47,5 +47,16 @@ namespace Bobs.Utilities.Tests
         {
             Assert.That(Enum<TestEnum>.ToEnum((short)2), Is.EqualTo(TestEnum.Value3));
         }
+        [Test]
+        public void Throws_TypeInitializationException_For_Invalid_TEnum()
+        {
+            Assert.That(
+                () => Enum<string>.GetValues(),
+                Throws
+                    .InstanceOf<TypeInitializationException>()
+                    .With.Property("InnerException")
+                    .InstanceOf<ArgumentException>()
+                );
+        }
     }
 }
